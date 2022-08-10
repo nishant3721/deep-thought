@@ -2,8 +2,10 @@ const express = require('express');
 const ObjectId = require('mongodb').ObjectId;
 const router = express.Router();
 const mongo = require('../db');
+/* Connecting to the MongoDB server. */
 mongo.connectToServer();
 
+/* This is a router for the GET method. It is used to get the data from the database. */
 router.get('/events', async (req, res) => {
     const { page, limit, type, id } = req.query;
     const dbo = mongo.getDb();
@@ -56,6 +58,7 @@ router.get('/events', async (req, res) => {
     }
 });
 
+/* This is a router for the POST method. It is used to insert the data into the database. */
 router.post('/events', async (req, res) => {
     const dbo = mongo.getDb();
     const {
@@ -90,6 +93,7 @@ router.post('/events', async (req, res) => {
     });
 });
 
+/* This is a router for the PUT method. It is used to update the data in the database. */
 router.put('/events/:id', async (req, res) => {
     const dbo = mongo.getDb();
     const {
@@ -130,6 +134,7 @@ router.put('/events/:id', async (req, res) => {
         );
 });
 
+/* This is a router for the DELETE method. It is used to delete the data from the database. */
 router.delete('/events/:id', async (req, res) => {
     const dbo = mongo.getDb();
     dbo
