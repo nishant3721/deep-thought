@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "ed6b1838-ca9f-4476-9ac6-05b67fcbc029",
+		"name": "Deep thought",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19306020"
+	},
+	"item": [
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "add event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nishant\",\r\n  \"files\": \"fjdfsakljdfska\",\r\n  \"tagline\": \"kdlfasjkfdjsakl\",\r\n  \"schedule\": \"fdklsajkdfls\",\r\n  \"description\": \"dfjklsjklsdfjak\",\r\n  \"moderator\": \"jkfdasjldfjsak\",\r\n  \"category\": \"dfkasjklfdsa\",\r\n  \"sub_category\": \"jdklfajdfs\",\r\n  \"rigor_rank\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v3/app/events",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v3",
+								"app",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get an event by _id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v3/app/events?id=62f3903d77c653fde1fe966e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v3",
+								"app",
+								"events"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "62f3903d77c653fde1fe966e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gets an event by its recency & paginate results by page number and limit of events per page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v3/app/events?type=latest&page=1&limit=2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v3",
+								"app",
+								"events"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "latest"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update an event by _id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"hello updated\",\r\n  \"files\": \"fjdfsakljdfska\",\r\n  \"tagline\": \"kdlfasjkfdjsakl\",\r\n  \"schedule\": \"fdklsajkdfls\",\r\n  \"description\": \"dfjklsjklsdfjak\",\r\n  \"moderator\": \"jkfdasjldfjsak\",\r\n  \"category\": \"dfkasjklfdsa\",\r\n  \"sub_category\": \"jdklfajdfs\",\r\n  \"rigor_rank\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v3/app/events/62f3903d77c653fde1fe966e",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v3",
+								"app",
+								"events",
+								"62f3903d77c653fde1fe966e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete an event by _id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
